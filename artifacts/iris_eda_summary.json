@@ -1,0 +1,121 @@
+{
+  "dataset_overview": {
+    "rows": 149,
+    "columns": 5,
+    "missing_cells": 0,
+    "duplicates": 0,
+    "memory_mb": 0.01
+  },
+  "numeric_summary": {
+    "columns": [
+      "sepal_length_(cm)",
+      "sepal_width_(cm)",
+      "petal_length_(cm)",
+      "petal_width_(cm)"
+    ],
+    "describe": {
+      "sepal_length_(cm)": {
+        "count": 149.0,
+        "mean": 5.844,
+        "std": 0.831,
+        "min": 4.3,
+        "25%": 5.1,
+        "50%": 5.8,
+        "75%": 6.4,
+        "max": 7.9
+      },
+      "sepal_width_(cm)": {
+        "count": 149.0,
+        "mean": 3.059,
+        "std": 0.428,
+        "min": 2.2,
+        "25%": 2.8,
+        "50%": 3.0,
+        "75%": 3.3,
+        "max": 4.152
+      },
+      "petal_length_(cm)": {
+        "count": 149.0,
+        "mean": 3.749,
+        "std": 1.768,
+        "min": 1.0,
+        "25%": 1.6,
+        "50%": 4.3,
+        "75%": 5.1,
+        "max": 6.9
+      },
+      "petal_width_(cm)": {
+        "count": 149.0,
+        "mean": 1.195,
+        "std": 0.763,
+        "min": 0.1,
+        "25%": 0.3,
+        "50%": 1.3,
+        "75%": 1.8,
+        "max": 2.5
+      }
+    },
+    "skewed_features": {},
+    "top_variance_features": {
+      "petal_length_(cm)": 3.125,
+      "sepal_length_(cm)": 0.69,
+      "petal_width_(cm)": 0.582,
+      "sepal_width_(cm)": 0.183
+    }
+  },
+  "categorical_summary": {
+    "columns": [],
+    "details": {}
+  },
+  "datetime_summary": {
+    "columns": [],
+    "details": {}
+  },
+  "correlation_summary": {
+    "top_pairs": {
+      "petal_length_(cm) vs petal_width_(cm)": 0.963,
+      "sepal_length_(cm) vs petal_length_(cm)": 0.874,
+      "sepal_length_(cm) vs petal_width_(cm)": 0.821,
+      "sepal_width_(cm) vs petal_length_(cm)": -0.429,
+      "sepal_width_(cm) vs petal_width_(cm)": -0.366,
+      "sepal_length_(cm) vs sepal_width_(cm)": -0.123
+    },
+    "target_correlations": {}
+  },
+  "target_summary": {
+    "available": true,
+    "dtype": "object",
+    "missing": 0,
+    "nunique": 3,
+    "distribution": {
+      "setosa": 50,
+      "versicolor": 50,
+      "virginica": 49
+    }
+  },
+  "insights": [
+    "After cleaning, the dataset has no materially problematic missing-value concentrations.",
+    "The strongest numeric relationship is petal_length_(cm) vs petal_width_(cm) with correlation 0.963. This is a strong candidate for multicollinearity checks or interaction features.",
+    "Target classes are reasonably balanced, so standard stratified training should work well."
+  ],
+  "recommended_models": {
+    "problem_type": "classification",
+    "complexity_band": "small",
+    "starter_models": [
+      "LogisticRegression",
+      "RandomForestClassifier",
+      "HistGradientBoostingClassifier"
+    ],
+    "notes": "Prefer interpretable baselines first, then add tree-based models for non-linear relationships."
+  },
+  "imbalance": {
+    "is_imbalanced": false,
+    "class_distribution": {
+      "setosa": 50,
+      "versicolor": 50,
+      "virginica": 49
+    },
+    "imbalance_ratio": 1.02,
+    "minority_share": 0.3289
+  }
+}
